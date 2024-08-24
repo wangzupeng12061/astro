@@ -1,7 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import '../styles/global.css';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -35,14 +37,18 @@ import '../styles/global.css';
 			</defs>
 		</svg>
 		<body>
-		<a href="/">首页</a>
-		<a href="/about/">关于</a>
-		<a href="/blog/">博客</a>
-		<h1>Welcome to <span class="text-gradient"> My Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
+			<Header />
+			<h1>Welcome to <span class="text-gradient"> My Astro</span></h1>
+			<p class="instructions">
+				To get started, open the directory <code>src/pages</code> in your
+				project.<br />
+				<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
+				above.
+			</p>
+			<Footer />
+			<script>
+				import "../scripts/menu.js";
+			</script>
 		</body>
 		<ul role="list" class="link-card-grid">
 			<Card
@@ -105,7 +111,10 @@ import '../styles/global.css';
 	.instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		background: linear-gradient(
+			rgba(var(--accent-dark), 66%),
+			rgba(var(--accent-dark), 33%)
+		);
 		padding: 1.5rem;
 		border-radius: 8px;
 	}
